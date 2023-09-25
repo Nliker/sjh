@@ -42,6 +42,26 @@ public class UserDaoImpl implements UserDao{
 		}
 		return null;
 	}
+	@Override
+	public boolean insertMember(MemberDto member) throws SQLException {
+		try(
+				Connection conn=db.getConnection();
+				PreparedStatement stmt=conn.prepareStatement(
+						"insert into members(user_id,user_name,user_pass,joinDate) values(?,?,?,?);"
+						);
+				){
+			int index=1;
+			stmt.setString(index++,member.getId());
+			stmt.setString(index++,member.getName());
+			stmt.setString(index++,member.getPassword());
+			stmt.setString(index++,"20231111");
+			int cnt=stmt.executeUpdate();
+			if(cnt==1) {
+				return true;
+			}
+		}
+		return false;
+	}
 	
 	
 }

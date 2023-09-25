@@ -19,4 +19,9 @@ public class UserServiceImpl implements UserService {
 	public MemberDto getMemberByCredential(MemberDto member) throws Exception {
 		return userDao.selectByIdAndPassword(member);
 	}
+	
+	@Override
+	public boolean createMember(MemberDto member) throws Exception{
+		return userDao.insertMember(member);
+	}
 }

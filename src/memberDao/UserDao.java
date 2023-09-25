@@ -8,4 +8,6 @@ public interface UserDao {
 
 	MemberDto selectByIdAndPassword(MemberDto member) throws SQLException;
 
+	boolean insertMember(MemberDto member) throws SQLException;
+
 }
