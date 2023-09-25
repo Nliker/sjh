@@ -22,16 +22,11 @@ public class MemberController extends HttpServlet {
 	
 	@Override
 	public void init() throws ServletException {
-		System.out.println("member init!!");
 		userService=UserServiceImpl.getInstance();
-		ServletContext application = getServletContext();
-		application.setAttribute("good","im good");
 	}
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//		System.out.println(getServletContext().getAttribute("good"));
-		System.out.println("?!??!?!");
 		String order=req.getParameter("action");
 		if("mvLogin".equals(order)){
 			mvLogin(req,resp);
@@ -55,8 +50,10 @@ public class MemberController extends HttpServlet {
 		resp.sendRedirect(req.getContextPath()+"/index.jsp");
 	}
 
-	private void join(HttpServletRequest req, HttpServletResponse resp) {
+	private void join(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+		System.out.println("join!!!");
 		
+		resp.sendRedirect(req.getContextPath()+"/index.jsp");
 	}
 
 	private void mvJoin(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

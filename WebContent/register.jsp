@@ -1,3 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="root" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -19,23 +24,21 @@
       </header>
       <main id="loginMain">
         <div class="login-page">
-          <div class="form">
-            <form name="register-form" class="register-form">
+          <div class="form" >
+            <form name="register-form" class="register-form" method="POST" action="${root}/member?action=mvJoin">
               <input id="id" name="id" type="text" placeholder="id" />
               <input id="password" name="password" type="password" placeholder="password" />
-              <input id="email" name="email" type="email" placeholder="email address" />
               <input id="name" name="name" type="text" placeholder="name" />
-              <input id="age" name="age" type="number" placeholder="age" />
-              <button onclick="regist()" type="button">회원 등록</button>
+              <button>회원가입</button>
             </form>
           </div>
         </div>
       </main>
       <footer>
         <ul class="footer-list">
-          <li><a href="#">개인정보 처리방침</a></li>
-          <li><a href="#">이용 약관</a></li>
-          <li><a href="#">오시는 길</a></li>
+          <li><a href="#">ê°ì¸ì ë³´ ì²ë¦¬ë°©ì¹¨</a></li>
+          <li><a href="#">ì´ì© ì½ê´</a></li>
+          <li><a href="#">ì¤ìë ê¸¸</a></li>
           <li>&copy; SSAFY</li>
         </ul>
       </footer>

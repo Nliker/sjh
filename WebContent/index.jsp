@@ -29,6 +29,8 @@ prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 	          <c:otherwise>
 	          		<li><a href="${root}/member?action=mvLogin">Login</a></li>
             		<li>|</li>
+            		<li><a href="${root}/member?action=mvJoin">SingUp</a></li>
+            		<li>|</li>
 	          </c:otherwise>
           </c:choose>
             <li><a href="#hotC">Recom</a></li>
