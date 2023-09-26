@@ -4,14 +4,14 @@ import memberDao.UserDao;
 import memberDao.UserDaoImpl;
 import memberDto.MemberDto;
 
-public class UserServiceImpl implements UserService {
-	private static UserService userService=new UserServiceImpl();
+public class MemberServiceImpl implements MemberService {
+	private static MemberService userService=new MemberServiceImpl();
 	private UserDao userDao;
-	private UserServiceImpl() {
+	private MemberServiceImpl() {
 		userDao=UserDaoImpl.getInstance();
 	}
 	
-	public static UserService getInstance() {
+	public static MemberService getInstance() {
 		return userService;
 	}
 

@@ -2,7 +2,7 @@ package memberService;
 
 import memberDto.MemberDto;
 
-public interface UserService {
+public interface MemberService {
 
 	MemberDto getMemberByCredential(MemberDto member) throws Exception;
 

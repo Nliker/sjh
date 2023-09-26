@@ -47,7 +47,7 @@ public class UserDaoImpl implements UserDao{
 		try(
 				Connection conn=db.getConnection();
 				PreparedStatement stmt=conn.prepareStatement(
-						"insert into members(user_id,user_name,user_pass,joinDate) values(?,?,?,?);"
+						"insert into members(user_id,user_name,user_pass,joinDate,age,email) values(?,?,?,?,?,?);"
 						);
 				){
 			int index=1;
@@ -55,12 +55,14 @@ public class UserDaoImpl implements UserDao{
 			stmt.setString(index++,member.getName());
 			stmt.setString(index++,member.getPassword());
 			stmt.setString(index++,"20231111");
-			int cnt=stmt.executeUpdate();
-			if(cnt==1) {
-				return true;
-			}
+			stmt.setInt(index++,member.getAge());
+			stmt.setString(index++,member.getEmail());
+			stmt.executeUpdate();
+			
+			return true;
+		}catch(Exception e) {
+			return false;
 		}
-		return false;
 	}
 	
 	

@@ -8,7 +8,7 @@ prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:if test="${not empty loginFaildMsg}">
 	<script>
 	  	alert("${loginFaildMsg}");
-		location.href = "${root}/member?action=mvLogin";
+		location.href = "${nextUri}";
 	</script>
 </c:if>
 

@@ -25,10 +25,12 @@
       <main id="loginMain">
         <div class="login-page">
           <div class="form" >
-            <form name="register-form" class="register-form" method="POST" action="${root}/member?action=mvJoin">
+            <form name="register-form" class="register-form" method="POST" action="${root}/member?action=join">
               <input id="id" name="id" type="text" placeholder="id" />
               <input id="password" name="password" type="password" placeholder="password" />
               <input id="name" name="name" type="text" placeholder="name" />
+              <input id="email" name="email" type="text" placeholder="email" />
+              <input id="age" name="age" type="number" placeholder="age" />
               <button>회원가입</button>
             </form>
           </div>

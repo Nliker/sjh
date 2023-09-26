@@ -13,16 +13,16 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import memberDto.MemberDto;
-import memberService.UserService;
-import memberService.UserServiceImpl;
+import memberService.MemberService;
+import memberService.MemberServiceImpl;
 
 @WebServlet("/member")
 public class MemberController extends HttpServlet {
-	private UserService userService;
+	private MemberService memberSerivce;
 	
 	@Override
 	public void init() throws ServletException {
-		userService=UserServiceImpl.getInstance();
+		memberSerivce=MemberServiceImpl.getInstance();
 	}
 
 	@Override
@@ -51,9 +51,42 @@ public class MemberController extends HttpServlet {
 	}
 
 	private void join(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-		System.out.println("join!!!");
-		
-		resp.sendRedirect(req.getContextPath()+"/index.jsp");
+		try {
+			System.out.println("join");
+			String id=req.getParameter("id");
+			String password=req.getParameter("id");
+			String name=req.getParameter("name");
+			String email=req.getParameter("email");
+			String strAge=req.getParameter("age");
+			HttpSession hs=req.getSession();
+			if("".equals(id) || "".equals(password) || "".equals(name) || "".equals(email) || "".equals(strAge)) {
+				hs.setAttribute("loginFaildMsg", "모든 사항들을 채워주세요!");
+				hs.setAttribute("nextUri",req.getContextPath()+"/member?action=mvJoin");
+				resp.sendRedirect(req.getContextPath()+"/common/loginError.jsp");
+				return;
+			}
+			int age=Integer.parseInt(strAge);
+			
+			MemberDto member=new MemberDto();
+			member.setId(id);
+			member.setName(name);
+			member.setPassword(password);
+			member.setAge(age);
+			member.setEmail(email);
+			boolean result=memberSerivce.createMember(member);
+
+			if(!result) {
+				hs.setAttribute("loginFaildMsg", "유효하지 않은 아이디입니다!");
+				hs.setAttribute("nextUri",req.getContextPath()+"/member?action=mvJoin");
+				resp.sendRedirect(req.getContextPath()+"/common/loginError.jsp");
+				return;
+			}
+			hs.setAttribute("loginFaildMsg", "정상적으로 회원가입 처리되었습니다!로그인을 진행해주세요.");
+			hs.setAttribute("nextUri",req.getContextPath()+"/member?action=mvLogin");
+			resp.sendRedirect(req.getContextPath()+"/common/loginError.jsp");
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	private void mvJoin(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -71,11 +104,12 @@ public class MemberController extends HttpServlet {
 			member.setId(id);
 			member.setPassword(password);
 
-			MemberDto memberInfo=userService.getMemberByCredential(member);
+			MemberDto memberInfo=memberSerivce.getMemberByCredential(member);
 			HttpSession hs=req.getSession();
 			System.out.println(memberInfo);
 			if(memberInfo==null) {
 				hs.setAttribute("loginFaildMsg", "아이디 또는 비밀번호 확인 후 다시 로그인하세요.");
+				hs.setAttribute("nextUri",req.getContextPath()+"/member?action=mvLogin");
 				resp.sendRedirect(req.getContextPath()+"/common/loginError.jsp");
 				return;
 			}
