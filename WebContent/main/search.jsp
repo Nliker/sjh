@@ -6,12 +6,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>search</title>
-    <link rel="stylesheet" href="./css/search.css" />
+    <link rel="stylesheet" href="../assets/css/search.css" />
   </head>
   <body>
     <div class="containerS">
       <header class="header-nav">
-        <a href="index.html"><img src="./assets/bg/logo2.gif" alt="" /></a>
+        <a href="./main.jsp"><img src="../assets/img/bg/logo2.gif" alt="" /></a>
       </header>
       <main id="searchM">
         <div id="input">
@@ -46,13 +46,12 @@
       type="text/javascript"
       src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0884821c5c56b40942ed805dab33a174"
     ></script>
-    <!-- <script
+    <script
       type="text/javascript"
       src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0884821c5c56b40942ed805dab33a174&libraries=services"
     ></script>
     <script>
-      // 검색 값으로 기존 검색창 업데이트
-      const valueFromIndex = localStorage.getItem("valueFromIndex");
+      <!-- const valueFromIndex = localStorage.getItem("valueFromIndex");
       if (valueFromIndex !== null) {
         document.getElementById("addResult").value = valueFromIndex;
       }
@@ -63,9 +62,9 @@
         };
 
       // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
-      var map = new kakao.maps.Map(mapContainer, mapOption);
-    </script>-->
-    <script type="text/javascript" src="js/search.js"></script>
+      var map = new kakao.maps.Map(mapContainer, mapOption); -->
+    </script>
+    <script type="text/javascript" src="../assets/js/search.js"></script>
     <script src="js/api.js"></script>
   </body>
 </html>

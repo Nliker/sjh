@@ -1,4 +1,4 @@
-const apiKey = "sO3MQCUWa9INBB6AYWIl%2FKCaQ0R6SzsOKAPd28hj5GnxCX1tWVlBLSG6zvN9Ep1hBiQzzRkbV%2FOfS3KBUYxOGw%3D%3D";
+//const apiKey = "sO3MQCUWa9INBB6AYWIl%2FKCaQ0R6SzsOKAPd28hj5GnxCX1tWVlBLSG6zvN9Ep1hBiQzzRkbV%2FOfS3KBUYxOGw%3D%3D";
 
 const defualtPinImage="../assets/defualtPinImage.png";
 var markers = [];
@@ -14,11 +14,10 @@ document.getElementById("searchBtn").addEventListener("click", () => {
     let areaCode = sessionStorage.getItem('area-code');
     let categoryID = sessionStorage.getItem('categoryId');
     
-    let URL = `http://apis.data.go.kr/B551011/KorService1/areaBasedList1?numOfRows=${200}&pageNo=1&MobileOS=ETC&MobileApp=AppTest&ServiceKey=${apiKey}&_type=json&listYN=Y&arrange=A&contentTypeId=${categoryID}&areaCode=${areaCode}&sigunguCode=&cat1=&cat2=&cat3=`
-    let imageSrc = `../assets/pin/${categoryID}.png`;
+//    let URL = `http://apis.data.go.kr/B551011/KorService1/areaBasedList1?numOfRows=${200}&pageNo=1&MobileOS=ETC&MobileApp=AppTest&ServiceKey=${apiKey}&_type=json&listYN=Y&arrange=A&contentTypeId=${categoryID}&areaCode=${areaCode}&sigunguCode=&cat1=&cat2=&cat3=`
+    let imageSrc = `../img/pin/${categoryID}.png`;
     
-    fetch(URL).then((res) => res.json()).then((data) => {
-        
+    fetch(URL).then((res) => res.json()).then((data) => {        
         data.response.body.items.item.forEach(async(place) => {
             let x = place.mapx;
             let y = place.mapy;
@@ -85,6 +84,7 @@ document.getElementById("searchBtn").addEventListener("click", () => {
     
             // 인포윈도우를 생성합니다
             var infowindow = new kakao.maps.InfoWindow({
+            	여기가 함정
                 position : iwPosition, 
                 content : iwContent,
                 removable : true

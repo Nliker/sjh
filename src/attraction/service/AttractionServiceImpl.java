@@ -4,6 +4,7 @@ import java.util.List;
 
 import attraction.dao.AttractionDao;
 import attraction.dao.AttractionDaoImpl;
+import attraction.dto.AttractionDto;
 import attraction.dto.SidoDto;
 
 public class AttractionServiceImpl implements AttractionService {
@@ -22,6 +23,11 @@ public class AttractionServiceImpl implements AttractionService {
 	@Override
 	public List<SidoDto> getAreaList() {
 		return attrDao.getAreaList();
+	}
+
+	@Override
+	public List<AttractionDto> searchAttract(String sido, String contentId) {
+		return attrDao.searchAttract(sido, contentId);
 	}
 
 }

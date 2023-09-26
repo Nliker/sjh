@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import attraction.dto.AttractionDto;
 import attraction.dto.SidoDto;
 import attraction.service.AttractionService;
 import attraction.service.AttractionServiceImpl;
@@ -37,8 +38,19 @@ public class AttractionController extends HttpServlet {
 	}
 	
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//		HttpSession session = req.getSession();
+		String action = req.getParameter("action");
+		String path = "";
+		
+		if ("search".equals(action)) {
+			searchList(req, resp);
+		}
+		
+	}
+
+	private void searchList(HttpServletRequest req, HttpServletResponse resp) {
+		HttpSession session = req.getSession();
 		
 		
+//		List<AttractionDto> result = attrService.searchAttract(sido, contentId);
 	}
 }

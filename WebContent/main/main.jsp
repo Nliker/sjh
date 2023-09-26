@@ -40,7 +40,7 @@
               	</c:forEach>
               </div>
             </div>
-            <button type="submit" id="sub-btn">GO</button>
+            <button type="button" id="sub-btn">GO</button>
           </div>
         </div>
       </div>
@@ -154,7 +154,15 @@
     </div>
     <script src="./assets/js/main.js"></script>
     <script>
-    	
+    document.getElementById("sub-btn").addEventListener("click", function() {
+    	  console.log(isSelectedOption);
+    	  if (!isSelectedOption) {
+    	    alert("지역을 선택해주세요");
+    	    return;
+    	  } else {
+    	    location.href = "./main/search.jsp";
+    	  }
+    	});
     </script>
   </body>
 </html>

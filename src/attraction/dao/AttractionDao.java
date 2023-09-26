@@ -5,4 +5,5 @@ import java.util.*;
 
 public interface AttractionDao {
 	List<SidoDto> getAreaList();
+	List<AttractionDto> searchAttract(String sido, String contentId);
 }
