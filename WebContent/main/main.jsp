@@ -19,10 +19,20 @@
       <div class="doorContainer">
         <div class="main">
           <ul>
-            <li><a href="login.html">Login</a></li>
-            <li>|</li>
-            <li><a href="#">MyPage</a></li>
-            <li>|</li>
+            <c:choose>
+	          <c:when test="${not empty memberInfo}">
+	          		<li><a href="${root}/member?action=logout">Logout</a></li>
+            		<li>|</li>
+            		<li><a href="#">MyPage</a></li>
+            		<li>|</li>	
+	          </c:when>
+	          <c:otherwise>
+	          		<li><a href="${root}/member?action=mvLogin">Login</a></li>
+            		<li>|</li>
+            		<li><a href="${root}/member?action=mvJoin">SingUp</a></li>
+            		<li>|</li>
+	          </c:otherwise>
+          	</c:choose>
             <li><a href="#hotC">Recommend</a></li>
             <li>|</li>
             <li><a href="#ranC">Check</a></li>

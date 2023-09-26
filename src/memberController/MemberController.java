@@ -91,7 +91,7 @@ public class MemberController extends HttpServlet {
 
 	private void mvJoin(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.out.println("mvJoin");
-		RequestDispatcher dp=req.getRequestDispatcher("/register.jsp");
+		RequestDispatcher dp=req.getRequestDispatcher("user/register.jsp");
 		dp.forward(req, resp);
 	}
 
@@ -124,7 +124,7 @@ public class MemberController extends HttpServlet {
 
 	private void mvLogin(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.out.println("mvLogin");
-		RequestDispatcher dp=req.getRequestDispatcher("/login.jsp");
+		RequestDispatcher dp=req.getRequestDispatcher("user/login.jsp");
 		dp.forward(req, resp);
 	}
 
