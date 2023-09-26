@@ -13,7 +13,7 @@
     width: 100%;
     height: 100%;
     position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../assets/bg/bg1.jpg") no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/bg/bg1.jpg") no-repeat;
   }
   header {
     height: 90px;

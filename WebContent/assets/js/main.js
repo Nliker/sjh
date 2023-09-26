@@ -5,16 +5,6 @@ function divClick(sidoCode, sidoName) {
     isSelectedOption=true;
 }
 
-document.getElementById("sub-btn").addEventListener("click", () => {
-  console.log(isSelectedOption);
-  if (!isSelectedOption) {
-    alert("지역을 선택해주세요");
-    return;
-  } else {
-    // sessionStorage.setItem('area-code',document.querySelector('.textBox').value);
-    window.open("search.html");
-  }
-});
 
 const options = {
   root: document.querySelector(".container"), // viewport
