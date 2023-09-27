@@ -43,10 +43,14 @@
     <img height="80%" src="./WebContent/assets/img/readme/지역선택.PNG"/>
     <br><br>
 
-  - 상단바 메뉴 : 로그인과 회원가입,인기 게시물,여행지 추천으로 이동 <br><br>
-    <img height="80%" src="./WebContent/assets/img/readme/로그인.PNG"/>
-    <img height="80%" src="./WebContent/assets/img/readme/회원가입.PNG"/>
-    <br><br>
+  - 상단바 메뉴 : 로그인과 회원가입,인기 게시물,여행지 추천으로 이동
+    1. 로그인 및 회원가입
+       <img height="80%" src="./WebContent/assets/img/readme/로그인.PNG"/>
+       <img height="80%" src="./WebContent/assets/img/readme/회원가입.PNG"/>
+       <br/>
+    2. 로그인 후 메뉴 변화
+       <img height="80%" src="./WebContent/assets/img/readme/로그인후.png"/>
+       <br><br>
 
 - ### 인기 게시물
 
@@ -72,7 +76,19 @@
   <img height="80%" src="./WebContent/assets/img/readme/관광지정보표시.PNG"/>
   <br>
 - 검색 기능 : 검색 키워드가 있을 시 검색 키워드가 포함되는 정보만 표시
-  <img height="80%" src="./WebContent/assets/img/readme/검색결과.PNG"/>
+  <img height="80%" src="./WebContent/assets/img/readme/검색결과.png"/>
+  <br><br>
+
+---
+
+### 3️⃣ 회원정보 수정 및 탈퇴 기능
+
+- 회원 정보 수정 : 이름, 이메일, 나이 수정
+  <img height="80%" src="./WebContent/assets/img/readme/회원정보수정.png"/>
+  <br>
+- 탈퇴 기능 : 회원 정보 수정 페이지의 '탈퇴하기' 버튼 클릭 시 회원 탈퇴
+  <img height="80%" src="./WebContent/assets/img/readme/탈퇴전.png"/>
+  <img height="80%" src="./WebContent/assets/img/readme/탈퇴후.png"/>
   <br><br>
 
 ---

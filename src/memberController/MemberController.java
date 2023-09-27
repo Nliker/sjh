@@ -108,7 +108,7 @@ public class MemberController extends HttpServlet {
 		try {
 			System.out.println("join");
 			String id=req.getParameter("id");
-			String password=req.getParameter("id");
+			String password=req.getParameter("password");
 			String name=req.getParameter("name");
 			String email=req.getParameter("email");
 			String strAge=req.getParameter("age");
