@@ -26,8 +26,8 @@ public class AttractionServiceImpl implements AttractionService {
 	}
 
 	@Override
-	public List<AttractionDto> searchAttract(int sido, int contentId) {
-		return attrDao.searchAttract(sido, contentId);
+	public List<AttractionDto> searchAttract(int sido, int contentId, String keyword) {
+		return attrDao.searchAttract(sido, contentId, keyword);
 	}
 
 }
