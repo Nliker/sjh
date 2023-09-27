@@ -39,27 +39,27 @@
 - ### 지역 정보 선택
 
   - 드롭바 메뉴 : 드롭바의 지역 선택 후 Go클릭시 지도조회로 이동
-    <img height="80%" src="./assets/img/readme/메인섹션1.PNG"/>
-    <img height="80%" src="./assets/img/readme/지역선택.PNG"/>
+    <img height="80%" src="./WebContent/assets/img/readme/메인섹션1.PNG"/>
+    <img height="80%" src="./WebContent/assets/img/readme/지역선택.PNG"/>
     <br><br>
 
   - 상단바 메뉴 : 로그인과 회원가입,인기 게시물,여행지 추천으로 이동 <br><br>
-    <img height="80%" src="./assets/img/readme/로그인.PNG"/>
-    <img height="80%" src="./assets/img/readme/회원가입.PNG"/>
+    <img height="80%" src="./WebContent/assets/img/readme/로그인.PNG"/>
+    <img height="80%" src="./WebContent/assets/img/readme/회원가입.PNG"/>
     <br><br>
 
 - ### 인기 게시물
 
   - 상단 : 인기있는 사진 목록표시
   - 하단 : 인기있는 쇼츠 목록표시(마우스 호버시 자동 재생)
-    <img height="80%" src="./assets/img/readme/메인섹션2.PNG"/>
+    <img height="80%" src="./WebContent/assets/img/readme/메인섹션2.PNG"/>
 
 <br><br>
 
 - ### 여행지 추천
 
   - 카드 : 성향에 맞는 사진을 모두 선택 후 여행지 추천
-    <img height="80%" src="./assets/img/readme/섹션3.PNG"/>
+    <img height="80%" src="./WebContent/assets/img/readme/섹션3.PNG"/>
     <br><br>
 
 ---
@@ -67,12 +67,12 @@
 ### 2️⃣ 지도 조회
 
 - 드롭바 메뉴 : 카테고리 선택 후 해당되는 여행지 정보를 지도에 표시
-  <img height="80%" src="./assets/img/readme/지역조회.PNG"/>
-  <img height="80%" src="./assets/img/readme/카테고리.PNG"/>
-  <img height="80%" src="./assets/img/readme/관광지정보표시.PNG"/>
+  <img height="80%" src="./WebContent/assets/img/readme/지역조회.PNG"/>
+  <img height="80%" src="./WebContent/assets/img/readme/카테고리.PNG"/>
+  <img height="80%" src="./WebContent/assets/img/readme/관광지정보표시.PNG"/>
   <br>
 - 검색 기능 : 검색 키워드가 있을 시 검색 키워드가 포함되는 정보만 표시
-  <img height="80%" src="./assets/img/readme/검색결과.PNG"/>
+  <img height="80%" src="./WebContent/assets/img/readme/검색결과.PNG"/>
   <br><br>
 
 ---
