@@ -11,7 +11,7 @@
   <body>
     <div class="containerS">
       <header class="header-nav">
-        <a href="./main.jsp"><img src="../assets/img/bg/logo2.gif" alt="" /></a>
+        <a href="${pageContext.request.contextPath}/main"><img src="../assets/img/bg/logo2.gif" alt="" /></a>
       </header>
       <main id="searchM">
         <div id="input">
