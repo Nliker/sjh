@@ -50,21 +50,7 @@
       type="text/javascript"
       src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0884821c5c56b40942ed805dab33a174&libraries=services"
     ></script>
-    <script>
-      <!-- const valueFromIndex = localStorage.getItem("valueFromIndex");
-      if (valueFromIndex !== null) {
-        document.getElementById("addResult").value = valueFromIndex;
-      }
-      var mapContainer = document.getElementById("map"), // 지도를 표시할 div
-        mapOption = {
-          center: new kakao.maps.LatLng(37.796881, 128.917414), // 지도의 중심좌표
-          level: 3, // 지도의 확대 레벨
-        };
-
-      // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
-      var map = new kakao.maps.Map(mapContainer, mapOption); -->
-    </script>
     <script type="text/javascript" src="../assets/js/search.js"></script>
-    <script src="js/api.js"></script>
+    <script src="../assets/js/api.js"></script>
   </body>
 </html>

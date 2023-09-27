@@ -16,6 +16,7 @@ import attraction.dto.AttractionDto;
 import attraction.dto.SidoDto;
 import attraction.service.AttractionService;
 import attraction.service.AttractionServiceImpl;
+import util.ToJSON;
 
 @WebServlet("/attraction")
 public class AttractionController extends HttpServlet {
@@ -42,15 +43,26 @@ public class AttractionController extends HttpServlet {
 		String path = "";
 		
 		if ("search".equals(action)) {
-			searchList(req, resp);
+			search(req, resp);
 		}
-		
 	}
 
-	private void searchList(HttpServletRequest req, HttpServletResponse resp) {
-		HttpSession session = req.getSession();
-		
-		
-//		List<AttractionDto> result = attrService.searchAttract(sido, contentId);
+	private void search(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+		String jsonData = "";
+		try {
+			int sidoCode=Integer.parseInt(req.getParameter("sidoCode"));
+			int contentTypeId=Integer.parseInt(req.getParameter("contentTypeId"));
+			
+			List<AttractionDto> attractionList=attrService.searchAttract(sidoCode, contentTypeId);
+//			for(AttractionDto data:attractionList) {
+//				System.out.println(data);
+//			}
+			jsonData=ToJSON.attractionDtoListToJSON(attractionList);
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		resp.setContentType("application/json;charset=utf-8");
+		resp.getWriter().write(jsonData);
 	}
 }
