@@ -10,6 +10,9 @@
     text-decoration: none;
     color: whitesmoke;
   }
+  #deleteMemberBtn{
+ 	background: #ff5959;
+  }
   .container{
     width: 100vw;
     height: 100vh;
