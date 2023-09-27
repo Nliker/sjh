@@ -1,5 +1,5 @@
 //const apiKey = "sO3MQCUWa9INBB6AYWIl%2FKCaQ0R6SzsOKAPd28hj5GnxCX1tWVlBLSG6zvN9Ep1hBiQzzRkbV%2FOfS3KBUYxOGw%3D%3D";
-
+console.log(URL);
 const defualtPinImage="../assets/defualtPinImage.png";
 var markers = [];
 
@@ -9,52 +9,39 @@ document.getElementById("searchBtn").addEventListener("click", () => {
         alert("카테고리를 선택해주세요.");
         return;
     }
+    
+    var areaCode = sessionStorage.getItem('area-code');
+    var categoryID = sessionStorage.getItem('categoryId');
+    var URL = `http://localhost:8080/%EA%B4%80%ED%86%B5back/attraction?action=search&sidoCode=${areaCode}&contentTypeId=${categoryID}`;
     setMarkers(null);
 
-    let areaCode = sessionStorage.getItem('area-code');
-    let categoryID = sessionStorage.getItem('categoryId');
+//    let areaCode = sessionStorage.getItem('area-code');
+//    let categoryID = sessionStorage.getItem('categoryId');
     
-//    let URL = `http://apis.data.go.kr/B551011/KorService1/areaBasedList1?numOfRows=${200}&pageNo=1&MobileOS=ETC&MobileApp=AppTest&ServiceKey=${apiKey}&_type=json&listYN=Y&arrange=A&contentTypeId=${categoryID}&areaCode=${areaCode}&sigunguCode=&cat1=&cat2=&cat3=`
-    let imageSrc = `../img/pin/${categoryID}.png`;
+//    let URL = `${pageContext.request.contextPath}/attraction/search?`
+    let imageSrc = `../assets/img/pin/${categoryID}.png`;
     
     fetch(URL).then((res) => res.json()).then((data) => {        
-        data.response.body.items.item.forEach(async(place) => {
-            let x = place.mapx;
-            let y = place.mapy;
+        data["data"].forEach(async(place) => {
+        	console.log(place);
+            let x = place.lat;
+            let y = place.lng;
 
             let title = place.title;
 
             let contentID = place.contentid;
-            let tel;
+            let tel=  (place.tel==="")? "제공되지 않습니다.":place.tel;
 
-            let placeUrl = `http://apis.data.go.kr/B551011/KorService1/detailIntro1?ServiceKey=${apiKey}&_type=json&contentTypeId=${categoryID}&contentId=${contentID}&MobileOS=ETC&MobileApp=AppTest`
-
-            await fetch(placeUrl).then((back) => back.json()).then((data) => {
-                data.response.body.items.item.forEach((content) => {
-                    
-                    console.log(content);
-                    if (typeof content.infocenter==='undefined' || content.infocenter===""){
-                        tel="제공되지 않는 정보입니다.";
-                    }else{
-                        let numberTokens=content.infocenter.replace(/[^0-9-]/g,"");
-                        if (numberTokens.length!=1){
-                            tel=numberTokens
-                        }else{
-                            tel = numberTokens[numberTokens.length-1];
-                        }
-                    }
-                })
-            });
             let pinImage=(place.firstimage === "") ? defualtPinImage : place.firstimage;
 
-            // var imageSrc = '../assets/pin/touristspot-ping.png', // 마커이미지의 주소입니다    
             var imageSize = new kakao.maps.Size(64, 69), // 마커이미지의 크기입니다
             imageOption = {offset: new kakao.maps.Point(27, 69)};
             
-            // let placeUrl = `http://apis.data.go.kr/B551011/KorService1/detailIntro1?ServiceKey=${apiKey}&contentTypeId=${categoryID}&contentId=${contentID}&MobileOS=ETC&MobileApp=AppTest`
+        
             var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
-            var markerPosition  = new kakao.maps.LatLng(y, x); 
-    
+            
+            var markerPosition  = new kakao.maps.LatLng(x, y); 
+            console.log(markerPosition);
             // 마커를 생성합니다
             var marker = new kakao.maps.Marker({
                 position: markerPosition,
@@ -64,7 +51,6 @@ document.getElementById("searchBtn").addEventListener("click", () => {
     
             marker.setMap(map);
             markers.push(marker);
-            console.log(pinImage);
             let addr="";
             if(typeof place.addr1==='undefined' || place.addr1===""){
                 addr="제공되지 않는 정보입니다."
@@ -84,7 +70,6 @@ document.getElementById("searchBtn").addEventListener("click", () => {
     
             // 인포윈도우를 생성합니다
             var infowindow = new kakao.maps.InfoWindow({
-            	여기가 함정
                 position : iwPosition, 
                 content : iwContent,
                 removable : true

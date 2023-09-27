@@ -51,7 +51,7 @@ public class AttractionDaoImpl implements AttractionDao {
 	}
 
 	@Override
-	public List<AttractionDto> searchAttract(String sido, String contentId) {
+	public List<AttractionDto> searchAttract(int sido, int contentTypeId) {
 		List<AttractionDto> list = new ArrayList<>();
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -62,8 +62,8 @@ public class AttractionDaoImpl implements AttractionDao {
 			String sql = "select * from attraction_info "
 					+ "where content_type_id = ? and sido_code = ?";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, contentId);
-			pstmt.setString(2, sido);
+			pstmt.setInt(1, contentTypeId);
+			pstmt.setInt(2, sido);
 			rs = pstmt.executeQuery();
 			
 			while (rs.next()) {

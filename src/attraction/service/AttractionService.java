@@ -7,5 +7,5 @@ import attraction.dto.SidoDto;
 
 public interface AttractionService {
 	List<SidoDto> getAreaList();
-	List<AttractionDto> searchAttract(String sido, String contentId);
+	List<AttractionDto> searchAttract(int sidoCode, int contentTypeId);
 }
