@@ -72,7 +72,7 @@
   <img height="80%" src="./WebContent/assets/img/readme/관광지정보표시.PNG"/>
   <br>
 - 검색 기능 : 검색 키워드가 있을 시 검색 키워드가 포함되는 정보만 표시
-  <img height="80%" src="./WebContent/assets/img/readme/검색결과.PNG"/>
+  <img height="80%" src="./WebContent/assets/img/readme/검색결과.png"/>
   <br><br>
 
 ---
