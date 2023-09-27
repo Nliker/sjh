@@ -18,12 +18,17 @@
     <div class="container">
       <div class="doorContainer">
         <div class="main">
+        	<c:if test="${not empty memberInfo}">
+        		 <h2 style="font-family: 'NanumMaGoCe'; color:white; text-decoration:none; padding-top:10px;">
+        		 	${memberInfo.name}님 환영합니다.
+        		 </h2>
+        	</c:if>
           <ul>
             <c:choose>
 	          <c:when test="${not empty memberInfo}">
 	          		<li><a href="${root}/member?action=logout">Logout</a></li>
             		<li>|</li>
-            		<li><a href="#">MyPage</a></li>
+            		<li><a href="${root}/member?action=mvMypage">MyPage</a></li>
             		<li>|</li>	
 	          </c:when>
 	          <c:otherwise>

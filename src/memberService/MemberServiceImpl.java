@@ -1,14 +1,14 @@
 package memberService;
 
-import memberDao.UserDao;
-import memberDao.UserDaoImpl;
+import memberDao.MemberDao;
+import memberDao.MemberDaoImpl;
 import memberDto.MemberDto;
 
 public class MemberServiceImpl implements MemberService {
 	private static MemberService userService=new MemberServiceImpl();
-	private UserDao userDao;
+	private MemberDao memberDao;
 	private MemberServiceImpl() {
-		userDao=UserDaoImpl.getInstance();
+		memberDao=MemberDaoImpl.getInstance();
 	}
 	
 	public static MemberService getInstance() {
@@ -17,11 +17,21 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public MemberDto getMemberByCredential(MemberDto member) throws Exception {
-		return userDao.selectByIdAndPassword(member);
+		return memberDao.selectByIdAndPassword(member);
 	}
 	
 	@Override
 	public boolean createMember(MemberDto member) throws Exception{
-		return userDao.insertMember(member);
+		return memberDao.insertMember(member);
+	}
+
+	@Override
+	public void modifyMember(MemberDto member) throws Exception {	
+		memberDao.updateMember(member);
+	}
+
+	@Override
+	public void deleteMember(String id) throws Exception {
+		memberDao.deleteMember(id);
 	}
 }
