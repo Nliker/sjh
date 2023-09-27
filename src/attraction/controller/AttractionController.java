@@ -46,14 +46,22 @@ public class AttractionController extends HttpServlet {
 			search(req, resp);
 		}
 	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("utf-8");
+		doGet(req, resp);
+	}
 
 	private void search(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		String jsonData = "";
 		try {
 			int sidoCode=Integer.parseInt(req.getParameter("sidoCode"));
 			int contentTypeId=Integer.parseInt(req.getParameter("contentTypeId"));
+			String keyword = (req.getParameter("keyword"));
+			System.out.println(keyword);
 			
-			List<AttractionDto> attractionList=attrService.searchAttract(sidoCode, contentTypeId);
+			List<AttractionDto> attractionList=attrService.searchAttract(sidoCode, contentTypeId, keyword);
 //			for(AttractionDto data:attractionList) {
 //				System.out.println(data);
 //			}

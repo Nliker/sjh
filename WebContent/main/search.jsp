@@ -29,8 +29,8 @@
                 <div id="39" class="categoryItem">음식점</div>
               </div>
             </div>
-            <input type="text" id="addResult" placeholder="키워드를 입력하세요" />
-            <button type="submit" id="searchBtn">검색</button>
+            <input type="text" id="addResult" name="searchKey" placeholder="키워드를 입력하세요" />
+            <button type="button" id="searchBtn">검색</button>
           </div>
           <div id="btnForm">
             <button type="button" id="">화장실</button>

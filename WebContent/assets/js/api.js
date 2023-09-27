@@ -10,9 +10,11 @@ document.getElementById("searchBtn").addEventListener("click", () => {
         return;
     }
     
+    var keyword = document.getElementById('addResult').value;
+    console.log(keyword);
     var areaCode = sessionStorage.getItem('area-code');
     var categoryID = sessionStorage.getItem('categoryId');
-    var URL = `http://localhost:8080/%EA%B4%80%ED%86%B5back/attraction?action=search&sidoCode=${areaCode}&contentTypeId=${categoryID}`;
+    var URL = `http://localhost:8080/%EA%B4%80%ED%86%B5back/attraction?action=search&sidoCode=${areaCode}&contentTypeId=${categoryID}&keyword=${keyword}`;
     setMarkers(null);
 
 //    let areaCode = sessionStorage.getItem('area-code');
@@ -23,7 +25,6 @@ document.getElementById("searchBtn").addEventListener("click", () => {
     
     fetch(URL).then((res) => res.json()).then((data) => {        
         data["data"].forEach(async(place) => {
-        	console.log(place);
             let x = place.lat;
             let y = place.lng;
 
@@ -40,8 +41,7 @@ document.getElementById("searchBtn").addEventListener("click", () => {
         
             var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
             
-            var markerPosition  = new kakao.maps.LatLng(x, y); 
-            console.log(markerPosition);
+            var markerPosition  = new kakao.maps.LatLng(x, y);
             // 마커를 생성합니다
             var marker = new kakao.maps.Marker({
                 position: markerPosition,
