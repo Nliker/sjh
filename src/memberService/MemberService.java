@@ -8,4 +8,7 @@ public interface MemberService {
 
 	boolean createMember(MemberDto member) throws Exception;
 	
+	void modifyMember(MemberDto member) throws Exception;
+	
+	void deleteMember(String id) throws Exception;
 }
