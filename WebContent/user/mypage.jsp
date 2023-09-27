@@ -26,9 +26,9 @@
         <div class="login-page">
           <div class="form" >
             <form name="register-form" class="register-form" method="POST" action="${root}/member?action=modifyMember">
-              <input id="name" name="name" type="text" value="${memberInfo.name}" />
-              <input id="email" name="email" type="text" value="${memberInfo.email}" />
-              <input id="age" name="age" type="number" value="${memberInfo.age}" />
+              <label>이름</label><input id="name" name="name" type="text" value="${memberInfo.name}" />
+              <label>이메일</label><input id="email" name="email" type="text" value="${memberInfo.email}" />
+              <label>나이</label><input id="age" name="age" type="number" value="${memberInfo.age}" />
               <button>수정하기</button>
               <button id="deleteMemberBtn" type="button">탈퇴하기</button>
             </form>
