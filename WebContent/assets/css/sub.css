@@ -14,7 +14,7 @@
     width: 100vw;
     height: 100vh;
     position: relative;
-    background: url(../assets/bg1.jpg) no-repeat;
+    background: url(../img/bg/bg1.jpg) no-repeat;
   }
   header {
     height: 70px;

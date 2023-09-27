@@ -170,7 +170,7 @@
     	    alert("지역을 선택해주세요");
     	    return;
     	  } else {
-    	    location.href = "./main/search.jsp";
+    	    location.href = "${pageContext.request.contextPath}/main/search.jsp";
     	  }
     	});
     </script>
