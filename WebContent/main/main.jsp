@@ -30,17 +30,16 @@
             		<li>|</li>
             		<li><a href="${root}/member?action=mvMypage">MyPage</a></li>
             		<li>|</li>	
+		            <li><a href="${root}/board?action=mvPage">Board</a></li>
 	          </c:when>
 	          <c:otherwise>
 	          		<li><a href="${root}/member?action=mvLogin">Login</a></li>
             		<li>|</li>
             		<li><a href="${root}/member?action=mvJoin">SingUp</a></li>
-            		<li>|</li>
 	          </c:otherwise>
           	</c:choose>
-            <li><a href="#hotC">Recommend</a></li>
             <li>|</li>
-            <li><a href="#ranC">Check</a></li>
+            <li><a href="#hotC">Recommend</a></li>
           </ul>
           <!-- <h1>보따리</h1> -->
           <img src="./assets/img/bg/logo2.gif" alt="" />
